@@ -113,11 +113,11 @@
         }
 
         #legend-colors > div:nth-child(2) {
-            background-color: #ead367;
+            background-color: #B6D18E;
         }
 
         #legend-colors > div:nth-child(3) {
-            background-color: #ffa3a1;
+            background-color: #F9B48F;
         }
 
         #legend-colors > div:nth-child(4) {
@@ -125,7 +125,7 @@
         }
 
         #legend-colors > div:nth-child(5) {
-            background-color: #CD595B;
+            background-color: #E81C17;
         }
 
         #legend-colors > div:nth-child(6) {
@@ -362,13 +362,14 @@
                     Math.max(cur, acc[1])
                 ]
             }, [Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY]);
-            map.setPaintProperty('county-points', 'circle-radius', [
-                'interpolate',
-                ['linear'],
-                ['get', e.target.value],
-                minMax[0], 0,
-                minMax[1], 50
-            ]);
+            map.setFilter('county-points', ['!=', ['get', e.target.value], 0]);
+map.setPaintProperty('county-points', 'circle-radius', [
+'interpolate',
+['cubic-bezier', 0, 0.5, 1, 0.5],
+['get', e.target.value],
+minMax[0], 2,
+minMax[1], 75
+]);
         } else {
             map.setPaintProperty('county-points', 'circle-radius', 0);
         }
@@ -387,10 +388,10 @@
                 property: 'rur',
                 stops: [
                     [1, '#50b161'],
-                    [2, '#ead367'],
+                    [2, '#B6D18E'],
                     [3, '#ffa3a1'],
                     [4, '#ff6663'],
-                    [5, '#CD595B'],
+                    [5, '#E81C17'],
                     [6, '#9B4D53'],
                     [7, '#68404C'],
                     [8, '#363444'],
@@ -409,8 +410,8 @@
                 stops: [
                     [0, '#dadfe2'],
                     [1, '#50b161'],
-                    [2, '#ead367'],
-                    [3, '#ffa3a1'],
+                    [2, '#B6D18E'],
+                    [3, '#F9B48F'],
                     [4, '#ff6663'],
                 ]
             });
@@ -431,13 +432,13 @@
                 ["to-number", ["get", e.target.value]],
                 '#50b161',
                 0.2,
-                '#96d0a0',
+                '#B6D18E',
                 0.4,
-                '#ead367',
+                '#F9B48F',
                 0.6,
-                '#ffa3a1',
+                '#ff6663',
                 0.8,
-                '#ff6663'
+                '#E81C17'
             ]);
         }
     }
