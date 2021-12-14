@@ -215,7 +215,7 @@
         maxZoom: 10
     });
 
-    const mq = window.matchMedia("(min-width: 600px)");
+    const mq = window.matchMedia("(min-width: 768px)");
     if (!mq.matches) {
         console.log('mobile');
         map.setMinZoom(1);
@@ -435,9 +435,9 @@ minMax[1], 75
                 '#50b161',
                 0.025,
                 '#B6D18E',
-                0.5,
+                0.05,
                 '#F9B48F',
-                0.75,
+                0.075,
                 '#ff6663',
                 0.1,
                 '#E81C17'
