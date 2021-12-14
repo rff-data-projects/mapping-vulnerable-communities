@@ -10,7 +10,7 @@
 }
 
 #map {
-  margin:0px 0px; height:700px;
+  margin:0px 0px; height:600px;
 }
 
 @media only screen and (min-width: 1160px) {
@@ -215,11 +215,11 @@
         maxZoom: 10
     });
 
-    const mq = window.matchMedia("(min-width: 768px)");
+    const mq = window.matchMedia("(min-width: 600px)");
     if (!mq.matches) {
         console.log('mobile');
         map.setMinZoom(1);
-        map.setZoom(2.5);
+        map.setZoom(3);
     }
 
     map.addControl(new mapboxgl.NavigationControl({showCompass: false}));
