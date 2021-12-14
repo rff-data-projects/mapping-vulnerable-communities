@@ -428,18 +428,18 @@ minMax[1], 75
             // document.getElementById("legend-hints").style.gridTemplateColumns = 'repeat(5, 47px)';
             // document.getElementById("legend-hints").style.gridColumnGap = '1px';
             document.getElementById("legend-colors").innerHTML = '<div></div><div></div><div></div><div></div><div></div>';
-            document.getElementById("legend-hints").innerHTML = '<div>5%</div><div>10%</div><div>15%</div><div>20%</div>';
+            document.getElementById("legend-hints").innerHTML = '<div>2%</div><div>4%</div><div>6%</div><div>8%</div>';
             map.setPaintProperty("county-points", "circle-color", [
                 'step',
                 ["to-number", ["get", e.target.value]],
                 '#50b161',
-                0.05,
+                0.02,
                 '#B6D18E',
-                0.1,
+                0.04,
                 '#F9B48F',
-                0.15,
+                0.06,
                 '#ff6663',
-                0.2,
+                0.08,
                 '#E81C17'
             ]);
         } else if (e.target.value === "bdg") {
