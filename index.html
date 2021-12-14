@@ -184,7 +184,7 @@
             <label for="color">Circle Color</label>
             <select name="color" id="color">
                 <option value="ecd">Economic Status</option>
-                <option value="bdg">% with Bachelor's Degree</option>
+                <option value="bdg">% with less than Bachelor's Degree</option>
                 <option value="rur">Rurality</option>
                 <option value="shm">% Share Minority</option>
                 <option value="shl">% Linguistic Isolation</option>
@@ -210,7 +210,7 @@
      const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/resourcesforthefuture/ckx63gd3i0gg414o3yql5m0bq',
-        dragPan: true,
+        dragPan: false,
         minZoom: 4,
         maxZoom: 10
     });
@@ -331,7 +331,7 @@
 
         this.circleColors = [
             {code: "ecd", name: "Economic Status"},
-            {code: "bdg", name: "% with Bachelor's Degree"},
+            {code: "bdg", name: "% with less than Bachelor's Degree"},
             {code: "rur", name: "Rurality"},
             {code: "shm", name: "% Share Minority"},
             {code: "shl", name: "% Linguistic Isolation"},
