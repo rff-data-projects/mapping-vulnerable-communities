@@ -442,6 +442,29 @@ minMax[1], 75
                 0.2,
                 '#E81C17'
             ]);
+        } else if (e.target.value === "bdg") {
+            document.getElementById("legend-colors").style.gridTemplateColumns = 'repeat(5, 47px)';
+            document.getElementById("legend-hints").style.gridTemplateColumns = '';
+            document.getElementById("legend-hints").style.gridColumnGap = '0px';
+            document.getElementById("legend-hints").style.padding = '0 23px';
+
+            // document.getElementById("legend-hints").style.gridTemplateColumns = 'repeat(5, 47px)';
+            // document.getElementById("legend-hints").style.gridColumnGap = '1px';
+            document.getElementById("legend-colors").innerHTML = '<div></div><div></div><div></div><div></div><div></div>';
+            document.getElementById("legend-hints").innerHTML = '<div>60%</div><div>70%</div><div>80%</div><div>90%</div>';
+            map.setPaintProperty("county-points", "circle-color", [
+                'step',
+                ["to-number", ["get", e.target.value]],
+                '#50b161',
+                0.6,
+                '#B6D18E',
+                0.7,
+                '#F9B48F',
+                0.8,
+                '#ff6663',
+                0.9,
+                '#E81C17'
+            ]);
         } else {
             document.getElementById("legend-colors").style.gridTemplateColumns = 'repeat(5, 47px)';
             document.getElementById("legend-hints").style.gridTemplateColumns = '';
