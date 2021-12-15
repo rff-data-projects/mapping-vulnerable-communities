@@ -1,8 +1,13 @@
 <html>
 <head>
 <title>Mapping Vulnerable Communities</title>
+  
 <style>
 /* Start copying css here */
+
+.fullyzoomed {
+  padding:0px !important;
+}
 
 .datatool--dropdown {
   position:relative;
@@ -495,10 +500,13 @@ minMax[1], 75
 
     const selectCtrl = new SelectControl();
 </script>
+<script>
+    const mapElement = document.querySelector('#map');
+    mapElement.parentElement.parentElement.parentElement.parentElement.classList.add('fullyzoomed');
+</script>
 
   
-  
-
+ 
     <!--Everything above this will be copied into JS codeblock-->
  
 </body>
