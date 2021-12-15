@@ -61,7 +61,7 @@
             right: 0; */
             display: grid;
             grid-template-rows: min-content 1fr;
-            grid-row-gap: 10px;
+            grid-row-gap: 0px;
         }
 
         .mapboxgl-popup {
@@ -75,16 +75,25 @@
 
         .select-control {
             display: grid;
-            grid-auto-flow: column;
+            grid-auto-flow: row;
             grid-column-gap: 20px;
             justify-content: center;
+            height: auto;
+            grid-template-columns: 250px 250px;
         }
+      
+      @media (max-width:600px) {
+        .select-control {
+            grid-template-columns: 250px;
+        }
+       }
 
         .select-control > div {
             display: grid;
             grid-auto-flow: row;
             justify-items: center;
             align-content: start;
+            padding-bottom:20px;
         }
 
         #legend {
@@ -214,13 +223,6 @@
         minZoom: 4,
         maxZoom: 10
     });
-
-    const mq = window.matchMedia("(min-width: 768px)");
-    if (!mq.matches) {
-        console.log('mobile');
-        map.setMinZoom(1);
-        map.setZoom(2.5);
-    }
 
     map.addControl(new mapboxgl.NavigationControl({showCompass: false}));
     map.scrollZoom.disable();
